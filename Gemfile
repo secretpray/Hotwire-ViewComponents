@@ -61,7 +61,7 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-
+  gem "faker", "~> 2.20"
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
@@ -69,5 +69,8 @@ group :development do
   # gem "spring"
 end
 
-
-gem "faker", "~> 2.20", :group => :development
+group :test do
+  gem "capybara"
+  gem "rspec-rails"
+  gem "selenium-webdriver"
+end

@@ -6,7 +6,7 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.new(message_params)
-
+    
     if @message.save
       Broadcast::Message.append(message: @message)
     end
@@ -20,6 +20,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:body)  
+    logger.debug "Message attributes hash: #{params}"
+    params.require(:message).permit(:body)
   end
 end
