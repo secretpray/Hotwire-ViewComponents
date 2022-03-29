@@ -1,0 +1,13 @@
+<div class="max-w-2xl">
+  <h1 class="text-xl font-bold my-5">Messages</h1>
+
+  <%= turbo_stream_from :messages %>
+
+  <div id="messages" class="mb-5">
+    <%= render MessageComponent.with_collection(@messages) %>
+  </div>
+
+  <div class="my-3">
+    <%= render "form", message: @message %>
+  </div>
+<div>

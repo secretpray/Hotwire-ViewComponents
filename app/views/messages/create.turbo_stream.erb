@@ -1,0 +1,4 @@
+<%= turbo_stream.replace "new_message_form", partial: "form", locals: { message: Message.new } %>
+<%= turbo_stream.append "messages" do %>
+  <%= render MessageComponent.new(message: @message) %>
+<% end %>
